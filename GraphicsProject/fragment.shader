@@ -22,6 +22,7 @@ void main() {
 	vec3 kNormal = normalize(fNormal.xyz);
 	vec3 iNormal = normalize(iDirection);
 
+
 	//Calculate ambient color
 	vec3 ambientColor = (fColor.xyz + kAmbient) * iAmbient;
 
@@ -39,4 +40,13 @@ void main() {
 	vec3 specularColor = (fColor.xyz + kSpecular) * iSpecular * specularTerm;
 
 	pColor = vec4(ambientColor + diffuseColor + specularColor, 1.0f);
+
+	//vec4 red = { 1.0f, 0.0f, 0.0f, 1.0f };
+	////snow
+	//if (kNormal.y >= 0.5f) {
+	//	pColor = red;
+	//}
+	//if (pColor.g < 0.5f) {
+	//	pColor = red;
+	//}
 }

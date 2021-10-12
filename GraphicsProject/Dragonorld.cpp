@@ -14,6 +14,8 @@ void Dragonorld::onStart()
 		{1.0f, 1.0f, 1.0f, 1.0f},
 		{ 1.0f, 1.0f, 1.0f, 1.0f }
 	);
+	m_light->setDirection({ -40.0f, -135.0f, 0.0f });
+	add(m_light);
 
 	//Dragon
 	m_dragon = new OBJMesh();
