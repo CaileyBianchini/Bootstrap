@@ -7,7 +7,7 @@ Cube::Vertex* Cube::generateVertices(unsigned int& vertexCount)
 
 	vertices = new Vertex[vertexCount];
 
-	
+
 	//1
 	setVertexPosition(vertices, vertexCount, 0, { -1.0,  -1.0f,-1.0f });
 	setVertexPosition(vertices, vertexCount, 1, { -1.0f, -1.0f, 1.0f });
@@ -56,7 +56,7 @@ Cube::Vertex* Cube::generateVertices(unsigned int& vertexCount)
 	setVertexPosition(vertices, vertexCount, 22, { 1.0f, 1.0f, 1.0f });
 	setVertexPosition(vertices, vertexCount, 23, { -1.0f, 1.0f,-1.0f });
 
-	//
+	//9
 	setVertexPosition(vertices, vertexCount, 20, { -1.0f, 1.0f, 1.0f });
 	setVertexPosition(vertices, vertexCount, 21, { 1.0f, 1.0f, 1.0f });
 	setVertexPosition(vertices, vertexCount, 22, { -1.0f, 1.0f, 1.0f });

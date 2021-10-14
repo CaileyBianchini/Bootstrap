@@ -1,5 +1,6 @@
 #include "Dragonorld.h"
 
+
 void Dragonorld::onStart()
 {
 	m_camera = new PlayerCamera(45.0f, 0.001f, 1000.0f);
@@ -28,6 +29,19 @@ void Dragonorld::onStart()
 	m_cube->setColor(glm::vec4(0.6f, 0.2f, 0.4f, 1.0f));
 	m_cube->getTransform()->setPosition(glm::vec3(10.0f, 5.0f, 5.0f));
 	add(m_cube);
+
+	GLFWwindow* window = glfwGetCurrentContext();
+	glfwSetCursor(window, m_playerMouse);
+
+	m_mouseLight = new Light();
+	/*m_mouseLight->setDirection({m_playerMouse});*/
+	m_mouseLight->setAmbient(glm::vec4(0.6f, 0.66, 0.0f, 1.0f));
+	m_mouseLight->setDiffuse(glm::vec4(0.6f, 0.6f, 1.0f, 1.0f));
+	m_mouseLight->setSpecular(glm::vec4(glm::vec4(0.1f, 1.0f, 0.1f, 1.0f)));
+	m_mouseLight->setSpecularPower(1.0f);
+	add(m_mouseLight);
+
+	
 }
 
 void Dragonorld::onEnd()
