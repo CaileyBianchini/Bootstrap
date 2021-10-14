@@ -15,6 +15,7 @@ void Dragonorld::onStart()
 	m_light->setDiffuse(glm::vec4(0.6f, 0.6f, 1.0f, 1.0f));
 	m_light->setSpecular(glm::vec4(glm::vec4(0.1f, 1.0f, 0.1f, 1.0f)));
 	m_light->setSpecularPower(1.0f);
+	add(m_light);
 
 	//Dragon
 	m_dragon = new OBJMesh();
