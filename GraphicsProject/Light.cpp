@@ -1,14 +1,6 @@
 #include "Light.h"
 #include "gl_core_4_4.h"
 
-Light::Light(glm::vec3 direction, glm::vec4 ambient, glm::vec4 diffuse, glm::vec4 specular)
-{
-	setDirection(direction);
-	m_ambient = ambient;
-	m_diffuse = diffuse;
-	m_specular = specular;
-}
-
 void Light::onDraw()
 {
 	int program = -1;
@@ -39,12 +31,12 @@ void Light::onDraw()
 	}
 }
 
-glm::vec3 Light::getDirection()
+glm::vec3 Light::getDirections()
 {
 	return getTransform()->getForward();
 }
 
-void Light::setDirection(glm::vec3 direction)
+void Light::setDirections(glm::vec3 direction)
 {
 	getTransform()->setForward(direction);
 }

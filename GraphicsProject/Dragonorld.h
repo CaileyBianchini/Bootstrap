@@ -4,6 +4,7 @@
 #include "Light.h"
 #include "OBJMesh.h"
 #include "Cube.h"
+#include "Light.h"
 
 class Dragonorld :
 	public World
@@ -17,6 +18,5 @@ private:
 	Light* m_light = nullptr;
 	OBJMesh* m_dragon = nullptr;
 	Cube* m_cube = nullptr;
-
 };
 

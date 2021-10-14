@@ -8,14 +8,13 @@ void Dragonorld::onStart()
 	setCamera(m_camera);
 	add(m_camera);
 
-	m_light = new Light(
-		{ 1.0f, 1.0f, 1.0f },
-		{0.5f, 0.5f, 0.5f, 1.0f},
-		{1.0f, 1.0f, 1.0f, 1.0f},
-		{ 1.0f, 1.0f, 1.0f, 1.0f }
-	);
-	m_light->setDirection({ -40.0f, -135.0f, 0.0f });
-	add(m_light);
+	//Inotializes the light
+	m_light = new Light();
+	m_light->setDirection(glm::vec3(-1.0f));
+	m_light->setAmbient(glm::vec4(0.6f, 0.66, 0.0f, 1.0f));
+	m_light->setDiffuse(glm::vec4(0.6f, 0.6f, 1.0f, 1.0f));
+	m_light->setSpecular(glm::vec4(glm::vec4(0.1f, 1.0f, 0.1f, 1.0f)));
+	m_light->setSpecularPower(1.0f);
 
 	//Dragon
 	m_dragon = new OBJMesh();
