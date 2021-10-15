@@ -1,6 +1,5 @@
 #include "Dragonorld.h"
 
-
 void Dragonorld::onStart()
 {
 	m_camera = new PlayerCamera(45.0f, 0.001f, 1000.0f);

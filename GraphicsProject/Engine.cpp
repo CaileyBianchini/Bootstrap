@@ -3,6 +3,7 @@
 #include "GLFW/glfw3.h"
 #include "glm/ext.hpp"
 #include <iostream>
+#include "Dragonorld.h"
 
 Engine::Engine() : Engine(1280, 720, "Window")
 {
@@ -111,6 +112,8 @@ int Engine::start()
 		return -10;
 	}
 
+	ShowCursor(TRUE);
+
 	return 0;
 }
 
@@ -134,7 +137,7 @@ int Engine::draw()
 
 	m_shader->bind();
 
-	Camera* camera = m_activeWorld->getCamera();
+	camera = m_activeWorld->getCamera();
 
 	m_projectionMatrix = glm::perspective(
 		camera->getFieldOfView() * glm::pi<float>() / 180.0f,
@@ -145,6 +148,8 @@ int Engine::draw()
 	glm::mat4 projectionViewMatrix = m_projectionMatrix * camera->getTransform()->getGlobalMatrix();
 	m_shader->bindUniform("projectionViewMatrix", projectionViewMatrix);
 	m_shader->bindUniform("cameraPosition", camera->getTransform()->getPosition());
+
+	//TO DO: set mouseLight with camera direction or mouse
 
 	m_activeWorld->draw();
 

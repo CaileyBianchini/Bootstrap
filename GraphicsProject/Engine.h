@@ -34,5 +34,7 @@ private:
 	aie::ShaderProgram* m_shader = nullptr;
 
 	World* m_activeWorld = nullptr;
+
+	Camera* camera = nullptr;
 };
 
