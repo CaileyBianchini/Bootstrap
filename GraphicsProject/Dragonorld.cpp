@@ -27,14 +27,12 @@ void Dragonorld::onStart()
 	//cube
 	m_cube = new Cube();
 	m_cube->setColor(glm::vec4(0.6f, 0.2f, 0.4f, 1.0f));
-	m_cube->getTransform()->setPosition(glm::vec3(10.0f, 5.0f, 5.0f));
+	m_cube->getTransform()->setPosition(glm::vec3(0.0f, 1.0f, 0.0f));
 	add(m_cube);
 
-	GLFWwindow* window = glfwGetCurrentContext();
-	glfwSetCursor(window, m_playerMouse);
 
+	//TO DO: Lights direction based off on mouse position
 	m_mouseLight = new Light();
-	/*m_mouseLight->setDirection({m_playerMouse});*/
 	m_mouseLight->setAmbient(glm::vec4(0.6f, 0.66, 0.0f, 1.0f));
 	m_mouseLight->setDiffuse(glm::vec4(0.6f, 0.6f, 1.0f, 1.0f));
 	m_mouseLight->setSpecular(glm::vec4(glm::vec4(0.1f, 1.0f, 0.1f, 1.0f)));
