@@ -15,12 +15,12 @@ public:
 	void onStart() override;
 	void onEnd() override;
 
-	void setMouseLight(glm::vec3 mouseDirection) { m_mouseLight->getTransform()->setPosition(glm::vec3(mouseDirection)); }
+	void setMouseLight(glm::vec3 mouseDirection) { m_light2->getTransform()->setPosition(glm::vec3(mouseDirection)); }
 
 private:
 	PlayerCamera* m_camera = nullptr;
 	Light* m_light = nullptr;
-	Light* m_mouseLight = nullptr;
+	Light* m_light2 = nullptr;
 	OBJMesh* m_dragon = nullptr;
 	Cube* m_cube = nullptr;
 	GLFWcursor* m_playerMouse;

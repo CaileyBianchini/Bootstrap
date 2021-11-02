@@ -31,14 +31,14 @@ void Dragonorld::onStart()
 
 
 	//TO DO: Lights direction based off on mouse position
-	m_mouseLight = new Light();
-	m_mouseLight->setAmbient(glm::vec4(0.6f, 0.66, 0.0f, 1.0f));
-	m_mouseLight->setDiffuse(glm::vec4(0.6f, 0.6f, 1.0f, 1.0f));
-	m_mouseLight->setSpecular(glm::vec4(glm::vec4(0.1f, 1.0f, 0.1f, 1.0f)));
-	m_mouseLight->setSpecularPower(1.0f);
-	add(m_mouseLight);
+	m_light2 = new Light();
+	m_light2->setAmbient(glm::vec4(0.6f, 0.66, 0.0f, 1.0f));
+	m_light2->setDiffuse(glm::vec4(0.6f, 0.6f, 1.0f, 1.0f));
+	m_light2->setSpecular(glm::vec4(glm::vec4(0.1f, 1.0f, 0.1f, 1.0f)));
+	m_light2->setSpecularPower(1.0f);
+	add(m_light2);
 
-	m_mouseLight->getTransform()->setForward(glm::vec4(1.0f, 1.0f, 0.5f, 1.0f));
+	m_light2->getTransform()->setForward(glm::vec4(1.0f, 1.0f, 0.5f, 1.0f));
 }
 
 void Dragonorld::onEnd()
