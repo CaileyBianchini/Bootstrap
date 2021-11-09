@@ -1,7 +1,7 @@
-#include "Light.h"
+#include "Light2.h"
 #include "gl_core_4_4.h"
 
-void Light::onDraw()
+void Light2::onDraw()
 {
 	int program = -1;
 	glGetIntegerv(GL_CURRENT_PROGRAM, &program);
@@ -15,7 +15,7 @@ void Light::onDraw()
 	int lightAmbient = glGetUniformLocation(program, "iAmbient");
 	int lightDiffuse = glGetUniformLocation(program, "iDiffuse");
 	int lightSpecular = glGetUniformLocation(program, "iSpecular");
-	
+
 	if (lightDirection >= 0) {
 		glm::vec3 direction = getDirection();
 		glUniform3f(lightDirection, direction.x, direction.y, direction.z);
@@ -31,12 +31,12 @@ void Light::onDraw()
 	}
 }
 
-glm::vec3 Light::getDirections()
+glm::vec3 Light2::getDirections()
 {
 	return getTransform()->getForward();
 }
 
-void Light::setDirections(glm::vec3 direction)
+void Light2::setDirections(glm::vec3 direction)
 {
 	getTransform()->setForward(direction);
 }

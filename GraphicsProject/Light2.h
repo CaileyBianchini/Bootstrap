@@ -3,17 +3,17 @@
 #include "glm/vec3.hpp"
 #include "glm/vec4.hpp"
 
-class Light : public Entity
+class Light2 : public Entity
 {
 public:
-	Light() {}
-	Light(glm::vec3 direction, glm::vec4 ambient, glm::vec4 diffuse, glm::vec4  specular) :
+	Light2() {}
+	Light2(glm::vec3 direction, glm::vec4 ambient, glm::vec4 diffuse, glm::vec4  specular) :
 		m_direction{ direction }, m_ambient{ ambient }, m_diffuse{ diffuse }, m_specular{ specular }  {}
-	~Light() {}
-	
+	~Light2() {}
+
 	void onDraw() override;
 
-	// LIGHT 1 //
+	// LIGHT 2 //
 
 	//Direction
 	glm::vec3 getDirection() { return m_direction; }
@@ -41,6 +41,4 @@ private:
 	glm::vec4 m_specular = glm::vec4(0.0f);
 	float m_specularPower = 1.0f;
 };
-
-
 

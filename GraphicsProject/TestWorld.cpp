@@ -11,12 +11,14 @@ void TestWorld::onStart()
 	add(m_camera);
 
 	//Light
-	m_light = new Light();
-	m_light->setDirection(glm::vec3(1.0f, 0.0f, -1.0f));
-	m_light->setAmbient(glm::vec4(0.2f, 0.2f, 0.2f, 1.0f));
-	m_light->setDiffuse(glm::vec4(0.6f, 0.6f, 1.0f, 1.0f));
-	m_light->setSpecular(glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
-	add(m_light);
+	m_light1 = new Light();
+	m_light1->setDirection(glm::vec3(1.0f, 0.0f, -1.0f));
+	m_light1->setAmbient(glm::vec4(0.2f, 0.2f, 0.2f, 1.0f));
+	m_light1->setDiffuse(glm::vec4(0.6f, 0.6f, 1.0f, 1.0f));
+	m_light1->setSpecular(glm::vec4(1.0f, 1.0f, 1.0f, 1.0f));
+	add(m_light1);
+
+	
 
 	//Quad
 	m_quad = new Quad();

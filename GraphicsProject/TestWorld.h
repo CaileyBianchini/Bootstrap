@@ -15,6 +15,6 @@ private:
 	PlayerCamera* m_camera = nullptr;
 	Quad* m_quad = nullptr;
 	OBJMesh* m_obj = nullptr;
-	Light* m_light = nullptr;
+	Light* m_light1 = nullptr;
 };
 

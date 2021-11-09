@@ -8,14 +8,25 @@ void Dragonorld::onStart()
 	setCamera(m_camera);
 	add(m_camera);
 
-	//Inotializes the light
-	m_light = new Light();
-	m_light->setDirection(glm::vec3(-1.0f));
-	m_light->setAmbient(glm::vec4(0.6f, 0.66, 0.0f, 1.0f));
-	m_light->setDiffuse(glm::vec4(0.6f, 0.6f, 1.0f, 1.0f));
-	m_light->setSpecular(glm::vec4(glm::vec4(0.1f, 1.0f, 0.1f, 1.0f)));
-	m_light->setSpecularPower(1.0f);
+
+
+	//Initializes the light
+	m_light = new Light(
+		{0.0f, 0.0f, -1.0f},		//Direction
+		{0.6f, 0.66f, 0.0f, 1.0f},	//Ambient
+		{0.6f, 0.6f,  1.0f, 1.0f},	//Diffuse
+		{0.1f, 1.0f,  0.1f, 1.0f}	//Specular
+	);
 	add(m_light);
+
+	m_light2 = new Light2(
+		{10.0f, 0.0f, 1.0f},			//Direction
+		{1.0f,  0.5f, 0.0f, 1.0f},	//Ambient
+		{0.1f,  0.6f, 0.5f, 1.5f},	//Diffuse
+		{0.5f,  0.7f, 1.0f, 0.5f}	//Specular
+	);
+	add(m_light2);
+
 
 	//Dragon
 	m_dragon = new OBJMesh();
@@ -29,16 +40,6 @@ void Dragonorld::onStart()
 	m_cube->getTransform()->setPosition(glm::vec3(0.0f, 1.0f, 0.0f));
 	add(m_cube);
 
-
-	//TO DO: Lights direction based off on mouse position
-	m_light2 = new Light();
-	m_light2->setAmbient(glm::vec4(0.6f, 0.66, 0.0f, 1.0f));
-	m_light2->setDiffuse(glm::vec4(0.6f, 0.6f, 1.0f, 1.0f));
-	m_light2->setSpecular(glm::vec4(glm::vec4(0.1f, 1.0f, 0.1f, 1.0f)));
-	m_light2->setSpecularPower(1.0f);
-	add(m_light2);
-
-	m_light2->getTransform()->setForward(glm::vec4(1.0f, 1.0f, 0.5f, 1.0f));
 }
 
 void Dragonorld::onEnd()
