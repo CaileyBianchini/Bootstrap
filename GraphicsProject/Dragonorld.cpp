@@ -12,6 +12,7 @@ void Dragonorld::onStart()
 
 	//Initializes the light
 	m_light = new Light(
+		0,
 		{0.0f, 0.0f, -1.0f},		//Direction
 		{0.6f, 0.66f, 0.0f, 1.0f},	//Ambient
 		{0.6f, 0.6f,  1.0f, 1.0f},	//Diffuse
@@ -19,8 +20,9 @@ void Dragonorld::onStart()
 	);
 	add(m_light);
 
-	m_light2 = new Light2(
-		{10.0f, 0.0f, 1.0f},			//Direction
+	m_light2 = new Light(
+		1,
+		{1.0f,	0.5f, 0.5f},			//Direction
 		{1.0f,  0.5f, 0.0f, 1.0f},	//Ambient
 		{0.1f,  0.6f, 0.5f, 1.5f},	//Diffuse
 		{0.5f,  0.7f, 1.0f, 0.5f}	//Specular

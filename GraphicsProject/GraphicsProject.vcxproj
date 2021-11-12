@@ -156,7 +156,6 @@
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Light.cpp" />
-    <ClCompile Include="Light2.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="OBJMesh.cpp" />
     <ClCompile Include="PlayerCamera.cpp" />
@@ -175,7 +174,6 @@
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Light.h" />
-    <ClInclude Include="Light2.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="OBJMesh.h" />
     <ClInclude Include="PlayerCamera.h" />

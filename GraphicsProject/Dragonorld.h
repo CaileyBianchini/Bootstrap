@@ -2,7 +2,6 @@
 #include "PlayerCamera.h"
 #include "World.h"
 #include "Light.h"
-#include "Light2.h"
 #include "OBJMesh.h"
 #include "Cube.h"
 #include "Light.h"
@@ -21,7 +20,7 @@ public:
 private:
 	PlayerCamera* m_camera = nullptr;
 	Light* m_light = nullptr;
-	Light2* m_light2 = nullptr;
+	Light* m_light2 = nullptr;
 	OBJMesh* m_dragon = nullptr;
 	Cube* m_cube = nullptr;
 	GLFWcursor* m_playerMouse;

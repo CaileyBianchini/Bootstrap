@@ -1,5 +1,15 @@
 #include "Light.h"
 #include "gl_core_4_4.h"
+#include <string>
+
+Light::Light(int term, glm::vec3 direction, glm::vec4 ambient, glm::vec4 diffuse, glm::vec4 specular)
+{
+	m_term = term;
+	setDirection(direction);
+	m_ambient = ambient;
+	m_diffuse = diffuse;
+	m_specular = specular;
+}
 
 void Light::onDraw()
 {
@@ -10,11 +20,21 @@ void Light::onDraw()
 		printf("No shader bound!\n");
 		return;
 	}
+	if (m_term < 0)
+	{
+		printf("Now number less than 0");
+	}
 
-	int lightDirection = glGetUniformLocation(program, "iDirection");
-	int lightAmbient = glGetUniformLocation(program, "iAmbient");
-	int lightDiffuse = glGetUniformLocation(program, "iDiffuse");
-	int lightSpecular = glGetUniformLocation(program, "iSpecular");
+	//figures out which 
+	std::string bound = ("iDirection" + std::to_string(m_term));
+	int lightDirection = glGetUniformLocation(program, bound.c_str());
+	bound = ("iAmbient" + std::to_string(m_term));
+	int lightAmbient = glGetUniformLocation(program, bound.c_str());
+	bound = ("iDiffuse" + std::to_string(m_term));
+	int lightDiffuse = glGetUniformLocation(program, bound.c_str());
+	bound = ("iSpecular" + std::to_string(m_term));
+	int lightSpecular = glGetUniformLocation(program, bound.c_str());
+
 	
 	if (lightDirection >= 0) {
 		glm::vec3 direction = getDirection();
