@@ -5,10 +5,11 @@ Quad::Quad(glm::vec4 color) : Quad::Quad()
 	m_color = color;
 }
 
-Quad::Vertex* Quad::generateVertices(unsigned int& vertexCount)
+Quad::Vertex* Quad::generateVertices(unsigned int& vertexCount, unsigned int& tricount)
 {
 	//Set the number of vertices
 	vertexCount = 6;
+	
 
 	//Define the vertices for a quad
 	Vertex* vertices = new Vertex[vertexCount];
@@ -19,6 +20,11 @@ Quad::Vertex* Quad::generateVertices(unsigned int& vertexCount)
 	vertices[3].position = { 0.5f, 0.0f, -0.5f, 1.0f };
 	//vertices[4].position = { 0.5f, 0.0f, 0.5f, 1.0f };
 	//vertices[5].position = { -0.5f, 0.0f, -0.5f, 1.0f };
+
+	vertices[0].texCoord = { 0.0f, 0.0f };
+	vertices[1].texCoord = { 0.0f, 1.0f };
+	vertices[2].texCoord = { 1.0f, 0.0f };
+	vertices[3].texCoord = { 1.0f, 1.0f };
 
 	for (int i = 0; i < vertexCount; i++) {
 		vertices[i].normal = { 0.0f, 1.0f, 0.0f, 0.0f };

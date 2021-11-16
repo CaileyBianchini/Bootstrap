@@ -164,7 +164,6 @@
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Quad.cpp" />
     <ClCompile Include="Shader.cpp" />
-    <ClCompile Include="TextureMap.cpp" />
     <ClCompile Include="Transform.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
@@ -182,15 +181,20 @@
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Quad.h" />
     <ClInclude Include="Shader.h" />
-    <ClInclude Include="TextureMap.h" />
     <ClInclude Include="tiny_obj_loader.h" />
     <ClInclude Include="Transform.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Dragon.mtl" />
-    <None Include="fragment.shader" />
-    <None Include="vertex.shader" />
+    <CopyFileToFolders Include="Dragon.mtl">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="fragment.shader">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="vertex.shader">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="Dragon.obj">

@@ -1,6 +1,11 @@
 #include "Cube.h"
 
-Cube::Vertex* Cube::generateVertices(unsigned int& vertexCount)
+Cube::Cube(glm::vec4 color)
+{
+	m_color = color;
+}
+
+Cube::Vertex* Cube::generateVertices(unsigned int& vertexCount, unsigned int& tricount)
 {
 	Vertex* vertices = nullptr;
 	vertexCount = 36;

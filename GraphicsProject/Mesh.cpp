@@ -3,6 +3,12 @@
 
 Mesh::Mesh()
 {
+	m_transform = {
+		1.0f, 0.0f, 0.0f, 0.0f,
+		0.0f, 1.0f, 0.0f, 0.0f,
+		0.0f, 0.0f, 1.0f, 0.0f,
+		0.0f, 0.0f, 0.0f, 1.0f
+	};
 	m_triCount = 0;
 	m_vertexArrayObject = 0;
 	m_vertexBufferObject = 0;
@@ -30,7 +36,7 @@ void Mesh::onStart()
 
 	//Generate the vertices
 	unsigned int vertexCount = 0u;
-	Vertex* vertices = generateVertices(vertexCount);
+	Vertex* vertices = generateVertices(vertexCount, m_triCount);
 
 	//Set the triangle count
 	m_triCount = vertexCount / 3u;

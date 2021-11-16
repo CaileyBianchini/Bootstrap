@@ -1,5 +1,7 @@
 #pragma once
 #include "Texture.h"
+#include <Texture.h>
+#include <Renderer2D.h>
 #include "glm/vec3.hpp"
 
 class Material

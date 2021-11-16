@@ -1,5 +1,6 @@
 #pragma once
 #include "Entity.h"
+#include "gl_core_4_4.h"
 #include "glm\vec4.hpp"
 #include "glm\mat4x4.hpp"
 
@@ -21,10 +22,12 @@ public:
 	void onStart() override;
 	void onDraw() override;
 
-	virtual Vertex* generateVertices(unsigned int& vertexCount) = 0;
+	virtual Vertex* generateVertices(unsigned int& vertexCount, unsigned int& tricount) = 0;
 	virtual unsigned int* generateIndices(unsigned int& indexCount);
 
+
 private:
+	glm::mat4 m_transform;
 	unsigned int m_triCount;
 	unsigned int m_vertexArrayObject, m_vertexBufferObject, m_indexBufferObject;
 };

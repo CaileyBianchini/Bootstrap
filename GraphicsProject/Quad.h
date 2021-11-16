@@ -7,7 +7,7 @@ public:
 	Quad() : Mesh() {}
 	Quad(glm::vec4 color);
 
-	Vertex* generateVertices(unsigned int& vertexCount) override;
+	Vertex* generateVertices(unsigned int& vertexCount, unsigned int& tricount) override;
 	unsigned int* generateIndices(unsigned int& indexCount) override;
 
 	glm::vec4 getColor() { return m_color; }
