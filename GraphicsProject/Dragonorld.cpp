@@ -44,7 +44,7 @@ void Dragonorld::onStart()
 
 	m_quad = new Quad();
 	m_quad->getTransform()->setPosition(glm::vec4(3.25f, 0.25f, 0.25f, 1.0f));
-	m_quad->setColor(glm::vec4(0.25f, 0.25f, 0.25f, 1.0f));
+	m_quad->setColor(glm::vec4(0.25f, 0.25f, 0.25f, 0.2f));
 	add(m_quad);
 }
 
